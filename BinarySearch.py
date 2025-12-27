@@ -1,5 +1,3 @@
-
-
 #BinarySearch Alice Problem
 
 #QUESTION 1: Alice has some cards with numbers written on them. 
@@ -24,15 +22,67 @@
 
 #Test Case Tip: Represent test cases as dictionaries
  
-test = {
+tests = []
+
+#Query occurs in the middle of the set
+tests.append({
     'input':{
         'cards': [13,11,10,7,4,3,1,0],
-        'query': 7
+        'query': 1
+    },
+    'output': 6
+})
+
+#Query the first element of the set
+
+tests.append({
+    'input':{
+        'cards': [4,2,1,-1],
+        'query': 4
+    },
+    'output': 0
+})
+
+#Query occurs in the last element
+tests.append({
+    'input':{
+        'cards': [3,-1,-9,-127],
+        'query': -127
     },
     'output': 3
-}
+})
+
+#quert contains just one element
+tests.append({
+    'input':{
+        'cards': [6],
+        'query': 6
+    },
+    'output': 0
+})
+
 
 def locate_card(cards,query):
-    result = locate_card(**test['input']) == test['output']
-    print(result)
+    #create a variable position 0
+    position = 0
 
+    #set up a loop for repition
+    while True:
+        #Check if elment of the current position matches the query
+        if cards[position] == query:
+            #Answer found
+            return position
+        #increment the position
+        position += 1
+
+        #check if you have reached the end of the array
+        if position == len(cards):
+              #number not found
+              return -1  
+#run and print test results
+for i, test in enumerate(tests):
+     result = locate_card(test['input']['cards'], test['input']['query'])
+     print(f"Test {i+1}: Expected {test['output']}, Got {result}, {'PASS' if result == test['output'] else 'FAIL'}")
+
+#Binary search complete, make sure to review at the end to check for printing
+# and test results
