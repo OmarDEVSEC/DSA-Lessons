@@ -34,8 +34,20 @@ def twoSum(self, nums: List[int], target:int) -> List[int]:
         if diff in prevMap:
             return [prevMap[diff], i]
         prevMap[n] = i
-    return[]
+    
 
 #Test cases
-print('Test 1:')
-result1 = twoSum
+
+tests = []
+
+tests.append({
+    'input':{
+        'nums': [3,4,6],
+        'target': 10
+    },
+    'output': [1,2]
+})
+
+for i, test in enumerate(tests):
+    result = twoSum (None, test['input']['nums'],test['input']['target']) #pass none for self
+print(f"Test {i+1}: Expected {test['output']}, Got {result}, {'PASS' if result == test['output'] else 'FAIL'}") 
