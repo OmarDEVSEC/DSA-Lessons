@@ -27,10 +27,11 @@
 from typing import List
 
 def twoSum(self, nums: List[int], target:int) -> List[int]:
-    prevMap = {} # mapping val to index (val:index)
+    prevMap = {} # mapping val to index (val:index) also initilizes a hashmap, empty
+                 #dictionary stores numbers as keys and their indicies as values.
 
-    for i, n in enumerate(nums):
-        diff = target - n
+    for i, n in enumerate(nums): #loop through the array with index and value
+        diff = target - n       #calculate the complement    
         if diff in prevMap:
             return [prevMap[diff], i]
         prevMap[n] = i
