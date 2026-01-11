@@ -24,13 +24,28 @@
 
 # This is a hashmap problem, python easy question.
 
-from typing import List
+# from typing import List
+
+# def twoSum(self, nums: List[int], target:int) -> List[int]:
+#     prevMap = {} #initilize hash map, mapping val -> indies
+
+#     for i, n in enumerate(nums):
+#         diff = target - n
+#         if diff in prevMap:
+#             return [prevMap[diff], i]
+#         prevMap[n] = i
+
+
+
+
+from typing import list
 
 def twoSum(self, nums: List[int], target:int) -> List[int]:
-    prevMap = {} #initilize hash map, mapping val -> indies
+
+    prevMap = {}
 
     for i, n in enumerate(nums):
-        diff = target - n
+        diff = target -n
         if diff in prevMap:
             return [prevMap[diff], i]
         prevMap[n] = i
