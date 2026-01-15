@@ -57,3 +57,28 @@ class Solution:
         return l # return needs to be outside of the loop, now the leetcode
     
     # problem works perfectly.
+
+
+
+    # Binary Search Practice problems.
+
+    # 1.) Find a target value in a sorted array and return its index. or -1 if not found
+
+
+    def targetFind(arr, target):
+        left = 0
+        right = len(arr) - 1
+
+        while left <= right:    #Chec if taget is in the left side of the arr
+            mid = (left + right) //2
+            
+            if arr[mid] == target:        #Check if target is mid of arr
+                return mid
+            
+            elif target < arr[mid]:
+                right = mid - 1
+            
+            else:
+                left = mid + 1
+
+        return -1
