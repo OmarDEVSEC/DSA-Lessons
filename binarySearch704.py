@@ -24,10 +24,10 @@ class Solution:
         right = len(nums) - 1
 
         while left <= right:
-            mid = (left + right) //2
-            if nums[mid] == target:
+            mid = (left + right) //2 #Initilize/calculate the mid of the arr
+            if nums[mid] == target:  #Check if target is mid of arr
                 return mid
-            elif target < nums[mid]:
+            elif target < nums[mid]:  # Check if taget is in the left side of the arr
                 right = mid - 1
             else:
                 left = mid + 1
