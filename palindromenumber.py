@@ -2,7 +2,7 @@
 # integer is a palindrome when it reads the same backwards, 121 and 121
 
 def isPalindrome(self,x:int) -> bool:
-    if x < 0: return False
+    if x < 0: return False  # return false if x is 0, removing problmatic edge case.
 
     div = 1
     while x >= 10 * div:
@@ -21,3 +21,5 @@ def isPalindrome(self,x:int) -> bool:
 
 
 # complete palindrome algorithm, review and study later
+
+
